@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple task manager for college students.">
+    <title>College Task Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="task-card" aria-labelledby="page-title">
+            <header class="app-header">
+                <div>
+                    <p class="eyebrow">Student workspace</p>
+                    <h1 id="page-title">College Task Manager</h1>
+                    <p class="subtitle">Keep your assignments and study goals organized.</p>
+                </div>
+                <div class="pending-badge" aria-live="polite">
+                    <span id="pending-count">0</span>
+                    <span>pending</span>
+                </div>
+            </header>
+
+            <form id="task-form" class="task-form">
+                <label class="sr-only" for="task-input">Task name</label>
+                <input
+                    id="task-input"
+                    name="task"
+                    type="text"
+                    maxlength="120"
+                    placeholder="What needs to be done?"
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" class="add-button">Add task</button>
+            </form>
+
+            <div class="list-heading">
+                <h2>My tasks</h2>
+                <span id="task-summary">0 tasks</span>
+            </div>
+
+            <ul id="task-list" class="task-list" aria-live="polite"></ul>
+
+            <p id="empty-state" class="empty-state" hidden>
+                No tasks yet. Add your first task above.
+            </p>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
